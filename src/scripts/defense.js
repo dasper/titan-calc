@@ -1,28 +1,7 @@
-function Skill(name, min_points, spells, prereq, desc) {
-    this.name = name
-    this.min_points = min_points
-    this.desc = desc
-    this.spells = spells
-    this.prereq = prereq
-}
-
-function Attribute(Hth, Egy, Str, Dex, Int) {
-    this.str = Str
-    this.dex = Dex
-    this.health = Hth
-    this.inte = Int
-    this.energy = Egy
-}
-
-
-function SpellInfo(spellinfo) {
-    this.spellinfo = spellinfo
-}
-
-function setmastery(Skills, Attributes) {
+function SetMastery(Skills, Attributes) {
     this.Skills = Skills
-    this.masteryid = 5
-    this.masteryname = "Defense"
+    this.masteryId = 5
+    this.masteryName = "Defense"
     this.Attributes = Attributes
 }
 
@@ -34,7 +13,7 @@ function loadDefense() {
     if (!AttributesBase[0]) { // base att's are only set one time
         AttributesBase[0] = new Attribute(300, 300, 50, 50, 50) // base stats for characters
     }
-    Attributes = [];
+    let Attributes = [];
     Attributes[1] = new Attribute(50, 0, 1, 2, 0)
     Attributes[2] = new Attribute(100, 0, 3, 4, 0)
     Attributes[3] = new Attribute(150, 0, 4, 6, 0)
@@ -69,10 +48,10 @@ function loadDefense() {
     Attributes[32] = new Attribute(1600, 0, 51, 64, 0)
 
 
-    Skills = [];
+    let Skills = [];
 
     // Concussive Blow
-    Spells = [];
+    let Spells = [];
     Spells[1] = new SpellInfo("+10% Stun Damage, 5% Chance of 1.0 Second of Stun")
     Spells[2] = new SpellInfo("+15% Stun Damage, 5% Chance of 1.5 Seconds of Stun")
     Spells[3] = new SpellInfo("+20% Stun Damage, 5% Chance of 2.0 Seconds of Stun")
@@ -324,10 +303,9 @@ function loadDefense() {
 
 
     // set the mastery array
-    Mastery[5] = new setmastery(Skills, Attributes)
+    Mastery[5] = new SetMastery(Skills, Attributes)
 
     // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellinfo)
+    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
     //alert(Skills[1][0].desc)
-
 }

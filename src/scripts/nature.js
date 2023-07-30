@@ -1,27 +1,7 @@
-function Skill(name, min_points, spells, prereq, desc) {
-    this.name = name
-    this.min_points = min_points
-    this.desc = desc
-    this.spells = spells
-    this.prereq = prereq
-}
-
-function Attribute(Hth, Egy, Str, Dex, Int) {
-    this.str = Str
-    this.dex = Dex
-    this.health = Hth
-    this.inte = Int
-    this.energy = Egy
-}
-
-function SpellInfo(spellinfo) {
-    this.spellinfo = spellinfo
-}
-
-function setmastery(Skills, Attributes) {
+function SetMastery(Skills, Attributes) {
     this.Skills = Skills
-    this.masteryid = 4
-    this.masteryname = "Nature"
+    this.masteryId = 4
+    this.masteryName = "Nature"
     this.Attributes = Attributes
 }
 
@@ -33,7 +13,7 @@ function loadNature() {
     if (!AttributesBase[0]) { // base att's are only set one time
         AttributesBase[0] = new Attribute(300, 300, 50, 50, 50) // base stats for characters
     }
-    Attributes = [];
+    let Attributes = [];
     Attributes[1] = new Attribute(20, 16, 0, 1, 2)
     Attributes[2] = new Attribute(40, 32, 0, 3, 5)
     Attributes[3] = new Attribute(60, 48, 0, 4, 7)
@@ -68,9 +48,9 @@ function loadNature() {
     Attributes[32] = new Attribute(640, 512, 0, 48, 80)
 
 
-    Skills = [];
+    let Skills = [];
     // Regrowth
-    Spells = [];
+    let Spells = [];
     Spells[1] = new SpellInfo("+240 Health Restored, 46 Energy Cost")
     Spells[2] = new SpellInfo("+300 Health Restored, 52 Energy Cost")
     Spells[3] = new SpellInfo("+370 Health Restored, 58 Energy Cost")
@@ -374,10 +354,9 @@ function loadNature() {
     Skills[19] = new Skill("Nature's Wrath", 32, Spells, 15, "Imbues the Nymph's attacks with the power of the elements.")
 
     // set the mastery array
-    Mastery[4] = new setmastery(Skills, Attributes)
+    Mastery[4] = new SetMastery(Skills, Attributes)
 
     // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellinfo)
+    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
     //alert(Skills[1][0].desc)
-
 }

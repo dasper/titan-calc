@@ -1,28 +1,7 @@
-function Skill(name, min_points, spells, prereq, desc) {
-    this.name = name
-    this.min_points = min_points
-    this.desc = desc
-    this.spells = spells
-    this.prereq = prereq
-}
-
-function Attribute(Hth, Egy, Str, Dex, Int) {
-    this.str = Str
-    this.dex = Dex
-    this.health = Hth
-    this.inte = Int
-    this.energy = Egy
-}
-
-
-function SpellInfo(spellinfo) {
-    this.spellinfo = spellinfo
-}
-
-function setmastery(Skills, Attributes) {
+function SetMastery(Skills, Attributes) {
     this.Skills = Skills
-    this.masteryid = 6
-    this.masteryname = "Rogue"
+    this.masteryId = 6
+    this.masteryName = "Rogue"
     this.Attributes = Attributes
 }
 
@@ -34,7 +13,7 @@ function loadRogue() {
     if (!AttributesBase[0]) { // base att's are only set one time
         AttributesBase[0] = new Attribute(300, 300, 50, 50, 50) // base stats for characters
     }
-    Attributes = [];
+    let Attributes = [];
     Attributes[1] = new Attribute(35, 0, 2, 2, 0)
     Attributes[2] = new Attribute(70, 0, 3, 5, 0)
     Attributes[3] = new Attribute(105, 0, 5, 7, 0)
@@ -69,11 +48,11 @@ function loadRogue() {
     Attributes[32] = new Attribute(1120, 0, 56, 80, 0)
 
 
-    Skills = [];
+    let Skills = [];
 
 
     // Calculated Strike
-    Spells = [];
+    let Spells = [];
     Spells[1] = new SpellInfo("3 Charge Levels, +45% Damage, 35 Piercing Damage")
     Spells[2] = new SpellInfo("3 Charge Levels, +60% Damage, 45 Piercing Damage")
     Spells[3] = new SpellInfo("3 Charge Levels, +75% Damage, 53 Piercing Damage")
@@ -342,10 +321,9 @@ function loadRogue() {
 
 
     // set the mastery array
-    Mastery[6] = new setmastery(Skills, Attributes)
+    Mastery[6] = new SetMastery(Skills, Attributes)
 
     // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellinfo)
+    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
     //alert(Skills[1][0].desc)
-
 }

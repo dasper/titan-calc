@@ -84,33 +84,33 @@
 
 
             document.title = "TitanCalc by stonedonkey - A Titan Quest Calculator - " + _MasteryName;
-            document.getElementById("masteryinfo").innerHTML = _MasteryName;
+            document.getElementById("masteryInfo").innerHTML = _MasteryName;
 
-            document.getElementById("mastersubinfo").innerHTML = "(" + (Mastery[_Mastery1].masteryname);
+            document.getElementById("masterSubInfo").innerHTML = "(" + (Mastery[_Mastery1].masteryName);
 
             if (_Mastery2.length > 0 && _Mastery2 != 0)
-                document.getElementById("mastersubinfo").innerHTML += " + " + (Mastery[_Mastery2].masteryname);
+                document.getElementById("masterSubInfo").innerHTML += " + " + (Mastery[_Mastery2].masteryName);
 
-            document.getElementById("mastersubinfo").innerHTML += ")";
+            document.getElementById("masterSubInfo").innerHTML += ")";
 
         }
     </script>
 
 </HEAD>
-<BODY link="white" vlink="white" alink="white" onload="PageStart();" BGCOLOR="#000000" LEFTMARGIN="0" TOPMARGIN="0"
+<body link="white" vlink="white" alink="white" onload="PageStart();" BGCOLOR="#000000" LEFTMARGIN="0" TOPMARGIN="0"
       MARGINWIDTH="0" MARGINHEIGHT="0">
 
-<br/><br/>
+<br><br>
 
-<TABLE width="95%" align="center" border=0>
+<table width="95%" align="center" border=0>
     <tr>
-        <TD valign="top">
-            <div id="pageheader">TitanCalc 0.66 <font size=1><a href="/">Back to Main</A></font>
+        <td valign="top">
+            <div id="pageHeader">TitanCalc 0.66 <font size=1><a href="/">Back to Main</a></font>
 
 
-                <div id="masteryheader">
-                    <div id="masteryinfo"></div>
-                    <div id="mastersubinfo"></div>
+                <div id="masteryHeader">
+                    <div id="masteryInfo"></div>
+                    <div id="masterSubInfo"></div>
                 </div>
 
                 <div id="earth-content"></div>
@@ -124,13 +124,13 @@
                 <div id="dream-content"></div>
 
                 <br><br>
-                <TABLE width="95%" align="center">
+                <table width="95%" align="center">
                     <tr>
                         <td>
                             <font color="white">
                                 <font size=1 face=tahoma,arial>
                                     Return Link:
-                                    <input type="text" id="linkback" onclick="this.select();"
+                                    <input type="text" id="linkBack" onclick="this.select();"
                                            style="font-size:8pt;color:white;background:black;width:200px;">
                                 </font>
                             </font>
@@ -155,14 +155,14 @@
             </CENTER>
 
         </td>
-        <TD width="100%" valign="top">
+        <td width="100%" valign="top">
 
             <br><br>
 
             <div id="stats" style="padding:10px">
-                <TABLE width="150" id="statsTable" cellpadding=0 cellspacing=1 border=0>
+                <table width="150" id="statsTable" cellpadding=0 cellspacing=1 border=0>
                     <tr>
-                        <TD colspan=2>
+                        <td colspan=2>
                             <div id="attTitle">Base Attributes:</div>
                         </td>
                     </tr>
@@ -201,11 +201,11 @@
                 <div style="padding:10px">
                     Right Click - Remove Point<br>
                     Left Click - Add Point<br>
-                    Shift-Right Click - Reset Points Points<br/>
+                    Shift-Right Click - Reset Points Points<br>
                     Shift-Left Click - Add Full Points
                 </div>
 
-                <div id="skilladjust" style="padding-left:10px">
+                <div id="skillAdjust" style="padding-left:10px">
                     Rewarded Skill Points:
                     <select onchange="UpdateSkillStats()" id="skillAdjustment">
                         <option value="0">0</option>
@@ -233,7 +233,7 @@
                     </select>
                     <a href="RewardPoints.html" target="_blank">What's this?</a>
                 </div>
-                <br/>
+                <br>
                 <div id="spellListingHeader"><B>Spell Listing:</B>
                     <input type="checkbox" id="verbose" onclick="DrawSpellList();">
                     Verbose Spells
@@ -250,6 +250,6 @@
 
 <script src="dist/titancalc.js"></script>
 
-</BODY>
+</body>
 
-</HTML>
+</table>

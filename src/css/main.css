@@ -1,23 +1,22 @@
-#spellname {
+#spellName {
     font-size: 10pt;
     color: White;
     font-weight: bold;
     font-family: Times New Roman;
 }
 
-#pointsremaining {
+#pointsRemaining {
     font-family: Arial;
     font-size: 7pt;
     color: White;
     text-align: center;
 }
 
-#masteryname {
+#masteryName {
     color: rgb(255, 165, 0);
     font-size: 14pt;
     font-weight: bold;
 }
-
 
 #attTitle {
     font-weight: bold;
@@ -49,8 +48,7 @@
     text-align: right;
 }
 
-
-#pressadd {
+#pressAdd {
     color: #83DE7F;
     font-size: 8pt;
 }
@@ -111,26 +109,26 @@
     padding: 10px;
 }
 
-#pageheader {
+#pageHeader {
     font-family: Arial;
     font-weight: bolder;
     font-size: 15pt;
     color: White;
 }
 
-#spelldesc {
+#spellDesc {
     font-size: 8pt;
     color: White;
     font-family: Times New Roman;
 }
 
-#currentspell {
+#currentSpell {
     font-size: 8pt;
     font-family: Times New Roman;
     color: #FFFFFF;
 }
 
-#nextspell {
+#nextSpell {
     font-size: 8pt;
     font-family: Times New Roman;
     color: #A09D98;
@@ -143,7 +141,7 @@
     font-family: Arial;
 }
 
-#currentranklevel {
+#currentRankLevel {
     font-size: 8pt;
     font-family: Times New Roman;
     color: #ECE89F;
@@ -160,13 +158,13 @@
     opacity: 0.90;
 }
 
-#prereq {
+#preReq {
     color: green;
     font-size: 8pt;
     font-family: Times New Roman;
 }
 
-#nextranklevel {
+#nextRankLevel {
     font-size: 8pt;
     font-family: Times New Roman;
     color: #ECE89F;
@@ -236,10 +234,10 @@ td {
 #button {
 }
 
-#skilladjust {
+#skillAdjust {
 }
 
-#skilladjust select {
+#skillAdjust select {
     background: black;
     color: White;
     border: solid 1px #DDDDDD;
@@ -247,18 +245,18 @@ td {
 
 }
 
-#masteryheader {
+#masteryHeader {
     display: flex;
     align-items: center;
 }
 
-#masteryinfo {
+#masteryInfo {
     float: left;
     height: 22px;
     margin-right: 5px;
 }
 
-#mastersubinfo {
+#masterSubInfo {
     font-size: 10px;
 
 

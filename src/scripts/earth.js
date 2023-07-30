@@ -1,27 +1,7 @@
-function Skill(name, min_points, spells, prereq, desc) {
-    this.name = name
-    this.min_points = min_points
-    this.desc = desc
-    this.spells = spells
-    this.prereq = prereq
-}
-
-function Attribute(Hth, Egy, Str, Dex, Int) {
-    this.str = Str
-    this.dex = Dex
-    this.health = Hth
-    this.inte = Int
-    this.energy = Egy
-}
-
-function SpellInfo(spellinfo) {
-    this.spellinfo = spellinfo
-}
-
-function setmastery(Skills, Attributes) {
+function SetMastery(Skills, Attributes) {
     this.Skills = Skills
-    this.masteryid = 1
-    this.masteryname = "Earth"
+    this.masteryId = 1
+    this.masteryName = "Earth"
     this.Attributes = Attributes
 }
 
@@ -33,7 +13,7 @@ function loadEarth() {
     if (!AttributesBase[0]) { // base att's are only set one time
         AttributesBase[0] = new Attribute(300, 300, 50, 50, 50) // base stats for characters
     }
-    Attributes = [];
+    let Attributes = [];
     Attributes[1] = new Attribute(23, 6, 0, 1, 3)
     Attributes[2] = new Attribute(45, 12, 0, 3, 6)
     Attributes[3] = new Attribute(68, 18, 0, 4, 9)
@@ -68,9 +48,9 @@ function loadEarth() {
     Attributes[32] = new Attribute(720, 192, 0, 48, 90)
 
 
-    Skills = [];
+    let Skills = [];
     // Earth Enchantment
-    Spells = [];
+    let Spells = [];
     Spells[1] = new SpellInfo("1 Active Energy Cost, 6.0 Meter Radius, 5-8 Burn Damage Over 1-3 Seconds, +12% Fire Damage, +75 Energy Reserved")
     Spells[2] = new SpellInfo("1 Active Energy Cost, 6.0 Meter Radius, 5-8 Burn Damage Over 1-3 Seconds, +20% Fire Damage, +75 Energy Reserved")
     Spells[3] = new SpellInfo("1 Active Energy Cost, 6.0 Meter Radius, 5-8 Burn Damage Over 1-3 Seconds, +28% Fire Damage, +75 Energy Reserved")
@@ -371,10 +351,9 @@ function loadEarth() {
     Skills[19] = new Skill("Eruption", 32, Spells, -1, "Volcanic fissures form in the ground, emitting deadly geysers of molten flame and fiery chunks of brimstone")
 
     // set the mastery array
-    Mastery[1] = new setmastery(Skills, Attributes)
+    Mastery[1] = new SetMastery(Skills, Attributes)
 
     // testing
-    //alert(Mastery[0].Skills[19].spells[10].spellinfo)
+    //alert(Mastery[0].Skills[19].spells[10].spellInfo)
     //alert(Skills[1][0].desc)
-
 }

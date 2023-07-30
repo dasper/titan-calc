@@ -1,28 +1,7 @@
-function Skill(name, min_points, spells, prereq, desc) {
-    this.name = name
-    this.min_points = min_points
-    this.desc = desc
-    this.spells = spells
-    this.prereq = prereq
-}
-
-function Attribute(Hth, Egy, Str, Dex, Int) {
-    this.str = Str
-    this.dex = Dex
-    this.health = Hth
-    this.inte = Int
-    this.energy = Egy
-}
-
-
-function SpellInfo(spellinfo) {
-    this.spellinfo = spellinfo
-}
-
-function setmastery(Skills, Attributes) {
+function SetMastery(Skills, Attributes) {
     this.Skills = Skills
-    this.masteryid = 9
-    this.masteryname = "Dream"
+    this.masteryId = 9
+    this.masteryName = "Dream"
     this.Attributes = Attributes
 }
 
@@ -35,7 +14,7 @@ function loadDream() {
     if (!AttributesBase[0]) { // base att's are only set one time
         AttributesBase[0] = new Attribute(300, 300, 50, 50, 50) // base stats for characters
     }
-    Attributes = [];
+    let Attributes = [];
     Attributes[1] = new Attribute(35, 8, 2, 0, 2)
     Attributes[2] = new Attribute(70, 16, 4, 0, 3)
     Attributes[3] = new Attribute(105, 24, 6, 0, 5)
@@ -70,10 +49,10 @@ function loadDream() {
     Attributes[32] = new Attribute(1120, 256, 64, 0, 56)
 
 
-    Skills = [];
+    let Skills = [];
 
     // Sands of Sleep
-    Spells = [];
+    let Spells = [];
     Spells[1] = new SpellInfo("25 Energy Cost, 2.5 - 4.0 seconds of Sleep")
     Spells[2] = new SpellInfo("30 Energy Cost, 3.0 - 4.8 seconds of Sleep")
     Spells[3] = new SpellInfo("35 Energy Cost, 3.5 - 5.6 seconds of Sleep")
@@ -354,10 +333,9 @@ function loadDream() {
 
 
     // set the mastery array
-    Mastery[9] = new setmastery(Skills, Attributes)
+    Mastery[9] = new SetMastery(Skills, Attributes)
 
     // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellinfo)
+    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
     //alert(Skills[1][0].desc)
-
 }

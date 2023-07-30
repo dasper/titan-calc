@@ -1,27 +1,7 @@
-function Skill(name, min_points, spells, prereq, desc) {
-    this.name = name
-    this.min_points = min_points
-    this.desc = desc
-    this.spells = spells
-    this.prereq = prereq
-}
-
-function Attribute(Hth, Egy, Str, Dex, Int) {
-    this.str = Str
-    this.dex = Dex
-    this.health = Hth
-    this.inte = Int
-    this.energy = Egy
-}
-
-function SpellInfo(spellinfo) {
-    this.spellinfo = spellinfo
-}
-
-function setmastery(Skills, Attributes) {
+function SetMastery(Skills, Attributes) {
     this.Skills = Skills
-    this.masteryid = 7
-    this.masteryname = "Hunting"
+    this.masteryId = 7
+    this.masteryName = "Hunting"
     this.Attributes = Attributes
 }
 
@@ -33,7 +13,7 @@ function loadHunter() {
     if (!AttributesBase[0]) { // base att's are only set one time
         AttributesBase[0] = new Attribute(300, 300, 50, 50, 50) // base stats for characters
     }
-    Attributes = [];
+    let Attributes = [];
     Attributes[1] = new Attribute(24, 0, 2, 2, 0)
     Attributes[2] = new Attribute(49, 0, 3, 5, 0)
     Attributes[3] = new Attribute(73, 0, 5, 7, 0)
@@ -67,10 +47,10 @@ function loadHunter() {
     Attributes[31] = new Attribute(759, 0, 54, 77, 0)
     Attributes[32] = new Attribute(784, 0, 56, 80, 0)
 
-    Skills = [];
+    let Skills = [];
 
     // Ensnare
-    Spells = [];
+    let Spells = [];
     Spells[1] = new SpellInfo("15 Energy Cost, 3 Second Duration, 15 Piercing Damage, -33% Defensive Ability")
     Spells[2] = new SpellInfo("17 Energy Cost, 4 Second Duration, 19 Piercing Damage, -33% Defensive Ability")
     Spells[3] = new SpellInfo("19 Energy Cost, 5 Second Duration, 23 Piercing Damage, -33% Defensive Ability")
@@ -322,10 +302,9 @@ function loadHunter() {
     Skills[19] = new Skill("Volley", 32, Spells, -1, "A combat technique that uses the spear or bow to rapidly strike three times in succession.")
 
     // set the mastery array
-    Mastery[7] = new setmastery(Skills, Attributes)
+    Mastery[7] = new SetMastery(Skills, Attributes)
 
     // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellinfo)
+    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
     //alert(Skills[1][0].desc)
-
 }

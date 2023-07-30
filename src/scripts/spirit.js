@@ -1,27 +1,7 @@
-function Skill(name, min_points, spells, prereq, desc) {
-    this.name = name
-    this.min_points = min_points
-    this.desc = desc
-    this.spells = spells
-    this.prereq = prereq
-}
-
-function Attribute(Hth, Egy, Str, Dex, Int) {
-    this.str = Str
-    this.dex = Dex
-    this.health = Hth
-    this.inte = Int
-    this.energy = Egy
-}
-
-function SpellInfo(spellinfo) {
-    this.spellinfo = spellinfo
-}
-
-function setmastery(Skills, Attributes) {
+function SetMastery(Skills, Attributes) {
     this.Skills = Skills
-    this.masteryid = 2
-    this.masteryname = "Spirit"
+    this.masteryId = 2
+    this.masteryName = "Spirit"
     this.Attributes = Attributes
 }
 
@@ -33,7 +13,7 @@ function loadSpirit() {
     if (!AttributesBase[0]) { // base att's are only set one time
         AttributesBase[0] = new Attribute(300, 300, 50, 50, 50) // base stats for characters
     }
-    Attributes = [];
+    let Attributes = [];
     Attributes[1] = new Attribute(20, 8, 0, 1, 3)
     Attributes[2] = new Attribute(40, 16, 0, 3, 6)
     Attributes[3] = new Attribute(60, 24, 0, 4, 9)
@@ -68,10 +48,10 @@ function loadSpirit() {
     Attributes[32] = new Attribute(640, 256, 0, 48, 96)
 
 
-    Skills = [];
+    let Skills = [];
 
     // Deathchill Aura
-    Spells = [];
+    let Spells = [];
     Spells[1] = new SpellInfo("1 Active Energy Cost/Second, 1 Second Duration, 2.5 Meter Radius, 1-3% Reduction to Enemy's Health, -13% Total Speed")
     Spells[2] = new SpellInfo("1 Active Energy Cost/Second, 1 Second Duration, 2.7 Meter Radius, 1-4% Reduction to Enemy's Health, -15% Total Speed")
     Spells[3] = new SpellInfo("1 Active Energy Cost/Second, 1 Second Duration, 3.0 Meter Radius, 2-5% Reduction to Enemy's Health, -17% Total Speed")
@@ -351,10 +331,9 @@ function loadSpirit() {
     Skills[19] = new Skill("Arcane Blast", 32, Spells, 15, "Drawing upon ancient arcane craft the Liche King forms deadly bolts of elemental energy and launches them at enemies.")
 
     // set the mastery array
-    Mastery[2] = new setmastery(Skills, Attributes)
+    Mastery[2] = new SetMastery(Skills, Attributes)
 
     // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellinfo)
+    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
     //alert(Skills[1][0].desc)
-
 }

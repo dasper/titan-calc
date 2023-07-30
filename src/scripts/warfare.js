@@ -1,28 +1,7 @@
-function Skill(name, min_points, spells, prereq, desc) {
-    this.name = name
-    this.min_points = min_points
-    this.desc = desc
-    this.spells = spells
-    this.prereq = prereq
-}
-
-function Attribute(Hth, Egy, Str, Dex, Int) {
-    this.str = Str
-    this.dex = Dex
-    this.health = Hth
-    this.inte = Int
-    this.energy = Egy
-}
-
-
-function SpellInfo(spellinfo) {
-    this.spellinfo = spellinfo
-}
-
-function setmastery(Skills, Attributes) {
+function SetMastery(Skills, Attributes) {
     this.Skills = Skills
-    this.masteryid = 3
-    this.masteryname = "Warfare"
+    this.masteryId = 3
+    this.masteryName = "Warfare"
     this.Attributes = Attributes
 }
 
@@ -30,12 +9,11 @@ function setmastery(Skills, Attributes) {
 window.loadWarfare = loadWarfare;
 
 function loadWarfare() {
-
     // set attributes
     if (!AttributesBase[0]) { // base att's are only set one time
         AttributesBase[0] = new Attribute(300, 300, 50, 50, 50) // base stats for characters
     }
-    Attributes = [];
+    let Attributes = [];
     Attributes[1] = new Attribute(40, 0, 2, 2, 0)
     Attributes[2] = new Attribute(80, 0, 4, 4, 0)
     Attributes[3] = new Attribute(120, 0, 6, 6, 0)
@@ -70,10 +48,10 @@ function loadWarfare() {
     Attributes[32] = new Attribute(1280, 0, 64, 64, 0)
 
 
-    Skills = [];
+    let Skills = [];
 
     // Weapon Training
-    Spells = [];
+    let Spells = [];
     Spells[1] = new SpellInfo("+10% Offensive Ability, +5% Attack Speed")
     Spells[2] = new SpellInfo("+14% Offensive Ability, +8% Attack Speed")
     Spells[3] = new SpellInfo("+18% Offensive Ability, +10% Attack Speed")
@@ -318,10 +296,9 @@ function loadWarfare() {
 
 
     // set the mastery array
-    Mastery[3] = new setmastery(Skills, Attributes)
+    Mastery[3] = new SetMastery(Skills, Attributes)
 
     // testing
-    //alert(Mastery[3].Skills[19].spells[4].spellinfo)
+    //alert(Mastery[3].Skills[19].spells[4].spellInfo)
     //alert(Skills[1][0].desc)
-
 }

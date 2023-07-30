@@ -1,27 +1,7 @@
-function Skill(name, min_points, spells, prereq, desc) {
-    this.name = name
-    this.min_points = min_points
-    this.desc = desc
-    this.spells = spells
-    this.prereq = prereq
-}
-
-function Attribute(Hth, Egy, Str, Dex, Int) {
-    this.str = Str
-    this.dex = Dex
-    this.health = Hth
-    this.inte = Int
-    this.energy = Egy
-}
-
-function SpellInfo(spellinfo) {
-    this.spellinfo = spellinfo
-}
-
-function setmastery(Skills, Attributes) {
+function SetMastery(Skills, Attributes) {
     this.Skills = Skills
-    this.masteryid = 8
-    this.masteryname = "Storm"
+    this.masteryId = 8
+    this.masteryName = "Storm"
     this.Attributes = Attributes
 }
 
@@ -33,7 +13,7 @@ function loadStorm() {
     if (!AttributesBase[0]) { // base att's are only set one time
         AttributesBase[0] = new Attribute(300, 300, 50, 50, 50) // base stats for characters
     }
-    Attributes = [];
+    let Attributes = [];
     Attributes[1] = new Attribute(21, 15, 0, 1, 3)
     Attributes[2] = new Attribute(42, 30, 0, 2, 6)
     Attributes[3] = new Attribute(63, 45, 0, 3, 9)
@@ -68,10 +48,10 @@ function loadStorm() {
     Attributes[32] = new Attribute(672, 480, 0, 32, 96)
 
 
-    Skills = [];
+    let Skills = [];
 
     // Ice Shard
-    Spells = [];
+    let Spells = [];
     Spells[1] = new SpellInfo("21 Energy Cost, 1 Projectile, 16-25 Cold Damage, 15% Slowed for 1.5 Seconds")
     Spells[2] = new SpellInfo("23 Energy Cost, 1 Projectile, 20-31 Cold Damage, 15% Slowed for 1.5 Seconds")
     Spells[3] = new SpellInfo("25 Energy Cost, 1 Projectile, 23-36 Cold Damage, 15% Slowed for 1.5 Seconds")
@@ -349,10 +329,9 @@ function loadStorm() {
     Skills[19] = new Skill("Reflection", 32, Spells, 13, "Gives Energy Shield the ability to reflect a portion of enemy attack damage back at enemies who hit it.")
 
     // set the mastery array
-    Mastery[8] = new setmastery(Skills, Attributes)
+    Mastery[8] = new SetMastery(Skills, Attributes)
 
     // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellinfo)
+    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
     //alert(Skills[1][0].desc)
-
 }

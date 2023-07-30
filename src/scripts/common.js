@@ -1,6 +1,5 @@
-function getquerystring(param) {
-
-    var searchParams = new URLSearchParams(window.location.search);
+function getQueryString(param) {
+    const searchParams = new URLSearchParams(window.location.search);
     if (searchParams.has(param)) {
         return searchParams.get(param);
     } else
@@ -9,13 +8,12 @@ function getquerystring(param) {
 }
 
 function loadHtml(id, file) {
-
-    var request = new XMLHttpRequest();
+    const request = new XMLHttpRequest();
     request.open('GET', '/skill-html/' + file, false);
 
     request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
-            var resp = request.responseText;
+            const resp = request.responseText;
             document.getElementById(id).innerHTML = resp;
 
         }
@@ -23,5 +21,26 @@ function loadHtml(id, file) {
     request.send();
 }
 
+function Skill(name, min_points, spells, preReq, desc) {
+    this.name = name
+    this.min_points = min_points
+    this.desc = desc
+    this.spells = spells
+    this.preReq = preReq
+}
+
+function Attribute(Hth, Egy, Str, Dex, Int) {
+    this.str = Str
+    this.dex = Dex
+    this.health = Hth
+    this.inte = Int
+    this.energy = Egy
+}
+
+
+function SpellInfo(spellInfo) {
+    this.spellInfo = spellInfo
+}
+
 window.loadHtml = loadHtml;
-window.getquerystring = getquerystring;
+window.getQueryString = getQueryString;
