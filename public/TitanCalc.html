@@ -1,204 +1,255 @@
 <html>
-	<head>
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-270951-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-270951-4"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-		gtag('config', 'UA-270951-4');
-		</script>
+        gtag('js', new Date());
 
-		<title>TitanCalc by stonedonkey - A Titan Quest Calculator </title>
-	
-		<script>
-			let _Mastery1 = "";
-			let _Mastery2 = "";
-			let _MasteryName = "";
-			let _PreSet1 = "";
-			let _PreSet2 = "";
-			let _SA = "";
+        gtag('config', 'UA-270951-4');
+    </script>
 
-			function PageStart() {
+    <title>TitanCalc by stonedonkey - A Titan Quest Calculator </title>
 
-				_Mastery1 = getquerystring("master1");
-				_Mastery2 = getquerystring("master2");
-				_MasteryName = getquerystring("mastery");
+    <script>
+        let _Mastery1 = "";
+        let _Mastery2 = "";
+        let _MasteryName = "";
+        let _PreSet1 = "";
+        let _PreSet2 = "";
+        let _SA = "";
 
-				if (getquerystring("m1").length > 2)
-					_PreSet1 = getquerystring("m1");
+        function PageStart() {
 
-				if (getquerystring("m2").length > 2)
-					_PreSet2 = getquerystring("m2");
+            _Mastery1 = getquerystring("master1");
+            _Mastery2 = getquerystring("master2");
+            _MasteryName = getquerystring("mastery");
 
-				if (getquerystring("sa").length > 2)
-					_PreSet1 = getquerystring("sa");
+            if (getquerystring("m1").length > 2)
+                _PreSet1 = getquerystring("m1");
 
+            if (getquerystring("m2").length > 2)
+                _PreSet2 = getquerystring("m2");
 
-				if (_Mastery1 == 1 || _Mastery2 == 1) {
-					loadHtml('earth-content', 'earth.html');
-					loadEarth();
-				}
-				if (_Mastery1 == 2 || _Mastery2 == 2) {
-					loadHtml('spirit-content', 'spirit.html');
-					loadSpirit();
-				}
-				if (_Mastery1 == 3 || _Mastery2 == 3) {
-					loadHtml('warfare-content', 'warfare.html');
-					loadWarfare();
-				}
-				if (_Mastery1 == 4 || _Mastery2 == 4) {
-					loadHtml('nature-content', 'nature.html');
-					loadNature();
-				}
-				if (_Mastery1 == 5 || _Mastery2 == 5) {
-					loadHtml('defense-content', 'defense.html');
-					loadDefense();
-				}
-				if (_Mastery1 == 6 || _Mastery2 == 6) {
-					loadHtml('rogue-content', 'rogue.html');
-					loadRogue();
-				}
-				if (_Mastery1 == 7 || _Mastery2 == 7) {
-					loadHtml('hunting-content', 'hunting.html');
-					loadHunter();
-				}
-				if (_Mastery1 == 8 || _Mastery2 == 8) {
-					loadHtml('storm-content', 'storm.html');
-					loadStorm();
-				}
-				if (_Mastery1 == 9 || _Mastery2 == 9) {
-					loadHtml('dream-content', 'dream.html');
-					loadDream();
-				}
-
-				if (_Mastery1.length > 0)
-					SetPage(_Mastery1);
-
-				if (_Mastery2.length > 0)
-					SetPage(_Mastery2);
+            if (getquerystring("sa").length > 2)
+                _PreSet1 = getquerystring("sa");
 
 
-				document.title = "TitanCalc by stonedonkey - A Titan Quest Calculator - " + _MasteryName;
-				document.getElementById("masteryinfo").innerHTML = _MasteryName;
+            if (_Mastery1 == 1 || _Mastery2 == 1) {
+                loadHtml('earth-content', 'earth.html');
+                loadEarth();
+            }
+            if (_Mastery1 == 2 || _Mastery2 == 2) {
+                loadHtml('spirit-content', 'spirit.html');
+                loadSpirit();
+            }
+            if (_Mastery1 == 3 || _Mastery2 == 3) {
+                loadHtml('warfare-content', 'warfare.html');
+                loadWarfare();
+            }
+            if (_Mastery1 == 4 || _Mastery2 == 4) {
+                loadHtml('nature-content', 'nature.html');
+                loadNature();
+            }
+            if (_Mastery1 == 5 || _Mastery2 == 5) {
+                loadHtml('defense-content', 'defense.html');
+                loadDefense();
+            }
+            if (_Mastery1 == 6 || _Mastery2 == 6) {
+                loadHtml('rogue-content', 'rogue.html');
+                loadRogue();
+            }
+            if (_Mastery1 == 7 || _Mastery2 == 7) {
+                loadHtml('hunting-content', 'hunting.html');
+                loadHunter();
+            }
+            if (_Mastery1 == 8 || _Mastery2 == 8) {
+                loadHtml('storm-content', 'storm.html');
+                loadStorm();
+            }
+            if (_Mastery1 == 9 || _Mastery2 == 9) {
+                loadHtml('dream-content', 'dream.html');
+                loadDream();
+            }
 
-				document.getElementById("mastersubinfo").innerHTML = "(" + (Mastery[_Mastery1].masteryname);
+            if (_Mastery1.length > 0)
+                SetPage(_Mastery1);
 
-				if (_Mastery2.length > 0 && _Mastery2 != 0)
-					document.getElementById("mastersubinfo").innerHTML += " + " + (Mastery[_Mastery2].masteryname);
-
-				document.getElementById("mastersubinfo").innerHTML += ")";
-
-			}
-
-		</script>
-	
-	</HEAD>
-	<BODY link="white" vlink="white" alink="white" onload="PageStart();" BGCOLOR="#000000" LEFTMARGIN="0" TOPMARGIN="0" MARGINWIDTH="0"	MARGINHEIGHT="0">
-
-<br /><br />
-
-<TABLE width="95%" align="center" border=0><TR><TD valign="top" >
-
-	<div id="pageheader">TitanCalc 0.66 <font size=1><a href="/">Back to Main</A></font>
-
-
-	<div id="masteryheader">
-		<div id="masteryinfo"></div>
-		<div id="mastersubinfo"></div>
-	</div>
-
-	<div id="earth-content"></div>
-	<div id="spirit-content"></div>
-	<div id="warfare-content"></div>
-	<div id="nature-content"></div>
-	<div id="defense-content"></div>
-	<div id="rogue-content"></div>
-	<div id="hunting-content"></div>
-	<div id="storm-content"></div>
-	<div id="dream-content"></div>
-
-<BR><BR>
-<TABLE width="95%" align="center"><TR><TD>
-<font color="white">
-<font size=1 face=tahoma,arial>
-Return Link:
-<input type="text" id="linkback"  onclick="this.select();" style="font-size:8pt;color:white;background:black;width:200;"></div>
-</font>
-</font>
-</TD></TR></TABLE>
-<BR><BR>
-
-<CENTER>
-<font color="white" size=1>
-  <center>
-	<a target="_blank" href="privacy-policy.html">Privacy Policy</a> - <a target="_blank" href="https://github.com/hansenwebco/titan-calc">GitHub</a> - <a target="_blank" href="https://github.com/hansenwebco/titan-calc/issues">Bugs</a> -
-	(c) 2007-  <script type="text/javascript">document.write(new Date().getFullYear());</script> Mark Hansen
-  </center>
-</CENTER>
-
-  </TD><TD width="100%"" valign="top">
-
-<br><br>
-	
-<div id="stats" style="padding:10px">
-	<TABLE width="150" id="statstable" cellpadding=0 cellspacing=1 border=0>
-	<TR><TD colspan=2><div id="atttitle">Base Attributes:</div></TD></TR>
-	<TR><TD>Health:</TD><TD><div id="health">0</div></TD></TR>
-	<TR><TD>Energy:</TD><TD><div id="energy">0</div></TD></TR>
-	<TR><TD>Strength:</TD><TD><div id="str">0</div></TD></TR>
-	<TR><TD>Intelligence:</TD><TD><div id="int">0</div></TD></TR>
-	<TR><TD>Dexterity:</TD><TD><div id="dex">0</div></TD></TR>
-	</TR></TABLE>
-</div>
-
-<div style="padding:10px">
-	Right Click - Remove Point<br>
-	Left Click - Add Point<br>
-	Shift-Right Click - Reset Points Points<br/>
-	Shift-Left Click - Add Full Points
-</div>
-
-<div id="skilladjust" style="padding-left:10px">
-	Rewarded Skill Points:
-	<select onchange="UpdateSkillStats()" id="skilladjustment">
-		<option value="0">0</option>
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5 - All Normal (TQ)</option>
-		<option value="6">6</option>
-		<option value="7">7 - All Normal (IM)</option>
-		<option value="8">8</option>
-		<option value="9">9</option>
-		<option value="10">10 - All Epic (TQ)</option>
-		<option value="11">11</option>
-		<option value="12">12</option>
-		<option value="13">13</option>
-		<option value="14">14 - All Epic (IM)</option>
-		<option value="15">15 - All Legend (TQ)</option>
-		<option value="16">16</option>
-		<option value="17">17</option>
-		<option value="18">18</option>
-		<option value="19">19</option>
-		<option value="20">20</option>
-		<option value="21">21 - All Legend (IM)</option>
- 	</select>
-	<a href="RewardPoints.html" target="_blank">What's this?</a>
-</div>
-<br />
-<div id="spelllistingheader"><B>Spell Listing:</B> <input type="checkbox" id="verbose" onclick="DrawSpellList();">Verbose Spells</div>
-	<div id="spells">None selected</div>
-
-	<br><br>
-
-	</TD></TR></TABLE>
+            if (_Mastery2.length > 0)
+                SetPage(_Mastery2);
 
 
-		<script src="dist/titancalc.js"></script>
+            document.title = "TitanCalc by stonedonkey - A Titan Quest Calculator - " + _MasteryName;
+            document.getElementById("masteryinfo").innerHTML = _MasteryName;
 
-	</BODY>
+            document.getElementById("mastersubinfo").innerHTML = "(" + (Mastery[_Mastery1].masteryname);
+
+            if (_Mastery2.length > 0 && _Mastery2 != 0)
+                document.getElementById("mastersubinfo").innerHTML += " + " + (Mastery[_Mastery2].masteryname);
+
+            document.getElementById("mastersubinfo").innerHTML += ")";
+
+        }
+    </script>
+
+</HEAD>
+<BODY link="white" vlink="white" alink="white" onload="PageStart();" BGCOLOR="#000000" LEFTMARGIN="0" TOPMARGIN="0"
+      MARGINWIDTH="0" MARGINHEIGHT="0">
+
+<br/><br/>
+
+<TABLE width="95%" align="center" border=0>
+    <tr>
+        <TD valign="top">
+            <div id="pageheader">TitanCalc 0.66 <font size=1><a href="/">Back to Main</A></font>
+
+
+                <div id="masteryheader">
+                    <div id="masteryinfo"></div>
+                    <div id="mastersubinfo"></div>
+                </div>
+
+                <div id="earth-content"></div>
+                <div id="spirit-content"></div>
+                <div id="warfare-content"></div>
+                <div id="nature-content"></div>
+                <div id="defense-content"></div>
+                <div id="rogue-content"></div>
+                <div id="hunting-content"></div>
+                <div id="storm-content"></div>
+                <div id="dream-content"></div>
+
+                <br><br>
+                <TABLE width="95%" align="center">
+                    <tr>
+                        <td>
+                            <font color="white">
+                                <font size=1 face=tahoma,arial>
+                                    Return Link:
+                                    <input type="text" id="linkback" onclick="this.select();"
+                                           style="font-size:8pt;color:white;background:black;width:200px;">
+                                </font>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <br><br>
+
+            <CENTER>
+                <font color="white" size=1>
+                    <center>
+                        <a target="_blank" href="privacy-policy.html">Privacy Policy</a> - <a target="_blank"
+                                                                                              href="https://github.com/hansenwebco/titan-calc">GitHub</a>
+                        - <a target="_blank" href="https://github.com/hansenwebco/titan-calc/issues">Bugs</a> -
+                        (c) 2007-
+                        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+                        Mark Hansen
+                    </center>
+                </font>
+            </CENTER>
+
+        </td>
+        <TD width="100%" valign="top">
+
+            <br><br>
+
+            <div id="stats" style="padding:10px">
+                <TABLE width="150" id="statsTable" cellpadding=0 cellspacing=1 border=0>
+                    <tr>
+                        <TD colspan=2>
+                            <div id="attTitle">Base Attributes:</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Health:</td>
+                        <td>
+                            <div id="health">0</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Energy:</td>
+                        <td>
+                            <div id="energy">0</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Strength:</td>
+                        <td>
+                            <div id="str">0</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Intelligence:</td>
+                        <td>
+                            <div id="int">0</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dexterity:</td>
+                        <td>
+                            <div id="dex">0</div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div style="padding:10px">
+                    Right Click - Remove Point<br>
+                    Left Click - Add Point<br>
+                    Shift-Right Click - Reset Points Points<br/>
+                    Shift-Left Click - Add Full Points
+                </div>
+
+                <div id="skilladjust" style="padding-left:10px">
+                    Rewarded Skill Points:
+                    <select onchange="UpdateSkillStats()" id="skillAdjustment">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 - All Normal (TQ)</option>
+                        <option value="6">6</option>
+                        <option value="7">7 - All Normal (IM)</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10 - All Epic (TQ)</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14 - All Epic (IM)</option>
+                        <option value="15">15 - All Legend (TQ)</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21 - All Legend (IM)</option>
+                    </select>
+                    <a href="RewardPoints.html" target="_blank">What's this?</a>
+                </div>
+                <br/>
+                <div id="spellListingHeader"><B>Spell Listing:</B>
+                    <input type="checkbox" id="verbose" onclick="DrawSpellList();">
+                    Verbose Spells
+                </div>
+                <div id="spells">None selected</div>
+
+                <br><br>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+<script src="dist/titancalc.js"></script>
+
+</BODY>
 
 </HTML>
