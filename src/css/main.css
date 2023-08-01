@@ -1,12 +1,70 @@
+body {
+    background-color: black;
+}
+:link {
+    color: white;
+}
+
+.font1{
+    font-size:1rem
+}
+
+.bg-line {
+    min-height: 48px;
+    min-width: 40px;
+    background-image: url("/images/line_grey.gif");
+    background-repeat: repeat;
+    background-size: cover;
+}
+.bg-line-top {
+    min-height: 48px;
+    min-width: 40px;
+    background-image: url("/images/topright_grey.gif");
+    background-size: cover;
+}
+.bg-line-mid {
+    min-height: 48px;
+    min-width: 40px;
+    background-image: url("/images/t_grey.gif");
+    background-size: cover;
+}
+.bg-line-bot {
+    min-height: 48px;
+    min-width: 40px;
+    background-image: url("/images/bottomright_grey.gif");
+    background-size: cover;
+}
+
+.spell-table{
+    font-size: 7pt;
+    color: white;
+    font-family: Arial, serif;
+}
+
+.center {
+    text-align: center;
+    vertical-align: center;
+}
+
+.white {
+    color: white;
+}
+
+.zeroSpace {
+    padding: 0;
+    border: 0;
+    border-spacing: 0;
+}
+
 #spellName {
     font-size: 10pt;
     color: White;
     font-weight: bold;
-    font-family: Times New Roman;
+    font-family: "Times New Roman", Times, serif;
 }
 
 #pointsRemaining {
-    font-family: Arial;
+    font-family: Arial, serif;
     font-size: 7pt;
     color: White;
     text-align: center;
@@ -104,13 +162,12 @@
     color: White;
     width: 80%;
     font-size: 7pt;
-    font-family: MS Reference Sans Serif, Arial;
-    width: 95%;
+    font-family: Arial, serif;
     padding: 10px;
 }
 
 #pageHeader {
-    font-family: Arial;
+    font-family: Arial, serif;
     font-weight: bolder;
     font-size: 15pt;
     color: White;
@@ -119,18 +176,18 @@
 #spellDesc {
     font-size: 8pt;
     color: White;
-    font-family: Times New Roman;
+    font-family: "Times New Roman", Times, serif;
 }
 
 #currentSpell {
     font-size: 8pt;
-    font-family: Times New Roman;
+    font-family: "Times New Roman", Times, serif;
     color: #FFFFFF;
 }
 
 #nextSpell {
     font-size: 8pt;
-    font-family: Times New Roman;
+    font-family: "Times New Roman", Times, serif;
     color: #A09D98;
 }
 
@@ -138,12 +195,12 @@
     font-size: 10pt;
     color: White;
     font-weight: bold;
-    font-family: Arial;
+    font-family: Arial, serif;
 }
 
 #currentRankLevel {
     font-size: 8pt;
-    font-family: Times New Roman;
+    font-family: "Times New Roman", Times, serif;
     color: #ECE89F;
 }
 
@@ -151,44 +208,43 @@
     width: 300px;
     position: absolute;
     border: 1px solid #CCCC00;
-    background-color: Black;
+    background-color: black;
     padding: 5px;
     filter: alpha(opacity=90);
-    /* IE's opacity*/
     opacity: 0.90;
 }
 
 #preReq {
     color: green;
     font-size: 8pt;
-    font-family: Times New Roman;
+    font-family: "Times New Roman", Times, serif;
 }
 
 #nextRankLevel {
     font-size: 8pt;
-    font-family: Times New Roman;
+    font-family: "Times New Roman", Times, serif;
     color: #ECE89F;
 }
 
 td {
+    min-width: 40px;
+    min-height: 48px;
     font-size: 7pt;
     color: white;
-    font-family: arial;
+    font-family: Arial, serif;
 }
 
 .b32pt {
-    background-color: Black;
+    background-color: black;
     color: #555555;
     border-top: 1px solid #CCCC00;
     border-left: 1px solid #CCCC00;
     border-right: 1px solid #CCCC00;
     border-bottom: none;
-
-
 }
 
 .b24pt {
-    background-color: Black;
+    background-color: black;
     color: #555555;
     border-left: 1px solid #CCCC00;
     border-right: 1px solid #CCCC00;
@@ -197,7 +253,7 @@ td {
 }
 
 .b16pt {
-    background-color: Black;
+    background-color: black;
     color: #555555;
     border-left: 1px solid #CCCC00;
     border-right: 1px solid #CCCC00;
@@ -206,7 +262,7 @@ td {
 }
 
 .b10pt {
-    background-color: Black;
+    background-color: black;
     color: #555555;
     border-left: 1px solid #CCCC00;
     border-right: 1px solid #CCCC00;
@@ -215,7 +271,7 @@ td {
 }
 
 .b4pt {
-    background-color: Black;
+    background-color: black;
     color: #555555;
     border-left: 1px solid #CCCC00;
     border-right: 1px solid #CCCC00;
@@ -224,7 +280,7 @@ td {
 }
 
 .b1pt {
-    background-color: Black;
+    background-color: black;
     border-left: 1px solid #CCCC00;
     border-right: 1px solid #CCCC00;
     border-top: none;

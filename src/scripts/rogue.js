@@ -321,9 +321,9 @@ function loadRogue() {
 
 
     // set the mastery array
-    Mastery[6] = new SetMastery(Skills, Attributes)
-
-    // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
-    //alert(Skills[1][0].desc)
+    Mastery[6] = {
+        masteryName: "Rogue",
+        Skills: Skills,
+        Attributes:Attributes
+    }
 }

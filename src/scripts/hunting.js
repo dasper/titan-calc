@@ -1,10 +1,3 @@
-function SetMastery(Skills, Attributes) {
-    this.Skills = Skills
-    this.masteryId = 7
-    this.masteryName = "Hunting"
-    this.Attributes = Attributes
-}
-
 window.loadHunter = loadHunter;
 
 function loadHunter() {
@@ -302,9 +295,9 @@ function loadHunter() {
     Skills[19] = new Skill("Volley", 32, Spells, -1, "A combat technique that uses the spear or bow to rapidly strike three times in succession.")
 
     // set the mastery array
-    Mastery[7] = new SetMastery(Skills, Attributes)
-
-    // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
-    //alert(Skills[1][0].desc)
+    Mastery[7] = {
+        masteryName: "Hunting",
+        Skills: Skills,
+        Attributes:Attributes
+    }
 }

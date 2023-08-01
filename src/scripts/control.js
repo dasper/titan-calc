@@ -3,18 +3,15 @@
 const _SkillLevel = [] //0
 const UserSkills = [];
 let _TotalPoints = 222;
-const isIE = document.all;
 Mastery = [] // stores mastery data for this page
-AttributesBase = [] // stores base attributes for characters
-
+AttributesBase = Attribute(300, 300, 50, 50, 50) // stores base attributes for characters
 
 function SetUserSkills() {
     this.SkillLevel = new Array(19)
 }
 
 function SetPage(masteryId, bolReset) {
-
-    if (bolReset) { // if we already have a array defined, we are resetting
+    if (bolReset) { // if we already have an array defined, we are resetting
         if (!confirm('Are you sure you want to reset the ' + Mastery[masteryId].masteryName + ' mastery?')) {
             return false;
         }
@@ -60,10 +57,8 @@ function SetPage(masteryId, bolReset) {
 }
 
 function AddSkillLevel(masteryId, button, skillLevel) {
-    if (button != 2 && !skillLevel) {
-
+    if (button !== 2 && !skillLevel) {
         if ((parseInt(_SkillLevel[masteryId]) + 1) <= 32) {
-
             _SkillLevel[masteryId]++
             _TotalPoints = _TotalPoints - 1
         }
@@ -76,7 +71,6 @@ function AddSkillLevel(masteryId, button, skillLevel) {
         _TotalPoints = _TotalPoints + _SkillLevel[masteryId] - skillLevel
         _SkillLevel[masteryId] = skillLevel; // set this to the defined skill level
     } else {
-
         // check to make sure there's no spells in use higher than the current skill level
         for (let x = 0; x < (Mastery[masteryId].Skills.length); x++) {
             if (Mastery[masteryId].Skills[x].min_points >= _SkillLevel[masteryId] && UserSkills[masteryId].SkillLevel[x] > 0) {
@@ -97,7 +91,8 @@ function AddSkillLevel(masteryId, button, skillLevel) {
 function UpdateSkillStats(masteryId) {
     for (let x = 0; x < Mastery.length; x++) {
         if (document.getElementById("pointsRemaining_" + x)) {
-            let UpdateText = "Points Left = " + parseInt(parseInt(_TotalPoints) + parseInt(GetDropDownValue('skillAdjustment')));
+            const value = parseInt(_TotalPoints) + parseInt(GetDropDownValue('skillAdjustment'))
+            let UpdateText = "Points Left = " + value.toString();
             let CharLevel = Math.floor((222 - parseInt(GetDropDownValue('skillAdjustment')) - _TotalPoints) / 3) + 1
             if (CharLevel < 0) CharLevel = 0;
             if (CharLevel > 75) CharLevel = 75;
@@ -113,11 +108,11 @@ function UpdateSkillStats(masteryId) {
                 }
             }
         }
-        if (document.getElementById("masterypoints_" + x)) {
+        if (document.getElementById("masteryPoints_" + x)) {
             let UpdateText = "Skill Points = " + _SkillLevel[x]
-            UpdateText = UpdateText + " - Mastery Points Spent = " + TotalPoints;
-            UpdateText = UpdateText + " - Total in this Mastery = " + parseInt(parseInt(_SkillLevel[x]) + parseInt(TotalPoints))
-            document.getElementById("masterypoints_" + x).innerHTML = UpdateText;
+            UpdateText = UpdateText + " - Mastery Points Spent = " + TotalPoints.toString();
+            UpdateText = UpdateText + " - Total in this Mastery = " + (parseInt(_SkillLevel[x]) + TotalPoints).toString()
+            document.getElementById("masteryPoints_" + x).innerHTML = UpdateText;
         }
 
     }
@@ -228,18 +223,17 @@ function DrawSkill(masteryId) {
 
     // create div for text
     if (!document.getElementById("tip")) {
-        const divtip = document.createElement("div")
-        divtip.setAttribute('id', "tip")
-        document.body.appendChild(divtip)
+        const divTip = document.createElement("div")
+        divTip.setAttribute('id', "tip")
+        document.body.appendChild(divTip)
     }
     document.getElementById("tip").style.position = "absolute";
-    divtip = document.getElementById("tip")
+    const divTip = document.getElementById("tip")
 
-    divtip.innerHTML = GetSkillLevelText(masteryId)
+    divTip.innerHTML = GetSkillLevelText(masteryId)
     img.style.position = "relative"
-    divtip.style.top = img.offsetTop - divtip.offsetHeight - 20;
-    divtip.style.left = img.height;
-
+    divTip.style.top = (img.offsetTop - divTip.offsetHeight - 20) + "px";
+    divTip.style.left = img.height;
 }
 
 function GetSkillLevelText(masteryId) {
@@ -274,51 +268,50 @@ function GetSkillLevelText(masteryId) {
 }
 
 function DrawSpell(masteryId, skillId) {
-
     const SpellText = GetSpellText(masteryId, skillId)
 
     // create div for text
     if (!document.getElementById("tip")) {
-        const divtip = document.createElement("div")
-        divtip.setAttribute('id', "tip")
-        document.body.appendChild(divtip)
+        const divTip = document.createElement("div")
+        divTip.setAttribute('id', "tip")
+        document.body.appendChild(divTip)
     }
     document.getElementById("tip").style.position = "absolute";
 
-
-    divwidth = document.getElementById("spell_" + masteryId + '_' + (skillId + 1)).offsetWidth / 2
+    let divWidth = document.getElementById("spell_" + masteryId + '_' + (skillId + 1)).offsetWidth / 2
     document.getElementById("spell_" + masteryId + '_' + (skillId + 1)).style.position = "absolute";
-    const LeftDiv = document.getElementById("spell_" + masteryId + '_' + (skillId + 1)).offsetLeft + divwidth;
+    const LeftDiv = document.getElementById("spell_" + masteryId + '_' + (skillId + 1)).offsetLeft + divWidth;
     const TopDiv = document.getElementById("spell_" + masteryId + '_' + (skillId + 1)).offsetTop;
     document.getElementById("spell_" + masteryId + '_' + (skillId + 1)).style.position = "relative";
 
-    divtip = document.getElementById("tip")
+    const divTip = document.getElementById("tip")
 
-    divtip.innerHTML = SpellText
-    divtip.style.left = LeftDiv - 100 //- (divtip.offsetWidth / 2)
+    divTip.innerHTML = SpellText
+    divTip.style.left = LeftDiv - 100 //- (divTip.offsetWidth / 2)
 
-    if (TopDiv - (divtip.offsetHeight + 50) <= 0) {
-        if (isIE) {
-            divtip.style.top = TopDiv + 75
-        } else {
-            divtip.style.top = TopDiv + 25
-        }
+    if (TopDiv - (divTip.offsetHeight + 50) <= 0) {
+        divTip.style.top = TopDiv + 25
     } else {
-
-        if (isIE) {
-            divtip.style.top = TopDiv - (divtip.offsetHeight + 10)
-        } else {
-            divtip.style.top = TopDiv - (divtip.offsetHeight + 50)
-        }
+        divTip.style.top = TopDiv - (divTip.offsetHeight + 50) +"px"
     }
 
 }
 
+function DrawTip(){
+    DrawSpell(this.dataset.mastery*1, this.dataset.spell*1)
+}
+
 function KillTip() {
     if (document.getElementById("tip")) {
-        elm = document.getElementById("tip")
+        const elm = document.getElementById("tip")
         document.body.removeChild(elm)
     }
+}
+
+function AddPointNew(event){
+    const masteryId = this.dataset.mastery*1
+    const skillId = this.dataset.spell*1
+    AddPoint(false, event.shiftKey, masteryId, event.button, skillId)
 }
 
 function AddPoint(bolCtrl, bolShft, masteryId, button, skillId) {
@@ -354,7 +347,6 @@ function AddPoint(bolCtrl, bolShft, masteryId, button, skillId) {
 }
 
 function RemovePoint(bolCtrl, bolShft, masteryId, skillId) {
-
     if (isNaN(UserSkills[masteryId].SkillLevel[skillId])) {
         UserSkills[masteryId].SkillLevel[skillId] = 0
     }
@@ -364,7 +356,7 @@ function RemovePoint(bolCtrl, bolShft, masteryId, skillId) {
         Points = UserSkills[masteryId].SkillLevel[skillId];
     }
 
-    // check to make sure that nothing is using this as as a required skill
+    // check to make sure that nothing is using this as a required skill
     for (let x = 0; x < (Mastery[masteryId].Skills.length); x++) {
         if (Mastery[masteryId].Skills[x].preReq == skillId && UserSkills[masteryId].SkillLevel[x] > 0) {
             if (UserSkills[masteryId].SkillLevel[skillId] - Points == 0) { // make sure at least one points is left in this spell
@@ -389,17 +381,16 @@ function DrawSpellList() {
     let SpellFound = false;
 
     for (let y = 0; y < Mastery.length; y++) {
-
         if (Mastery[y]) {
             SpellList = SpellList + "<div id='masteryName'>" + Mastery[y].masteryName + "</div>"
-            for (let x = 0; x < (Skills.length); x++) {
-                let spellrank = 0;
+            for (let x = 0; x < (Mastery[y].Skills.length); x++) {
+                let spellRank = 0;
 
-                if (UserSkills[y]){
-                    spellrank = UserSkills[y].SkillLevel[x];
+                if (UserSkills[y]) {
+                    spellRank = UserSkills[y].SkillLevel[x];
                 }
 
-                if (Mastery[y].Skills[x].spells[spellrank]) {
+                if (Mastery[y].Skills[x].spells[spellRank]) {
                     SpellFound = true;
                     if (document.getElementById("verbose").checked) {
                         SpellList = SpellList + "<hr noshade size=1>"
@@ -407,7 +398,7 @@ function DrawSpellList() {
                     SpellList = SpellList + "<B>" + Mastery[y].Skills[x].name + "</B>: (Rank: " + UserSkills[y].SkillLevel[x] + " of " + (Mastery[y].Skills[x].spells.length - 1) + ")<br>"
                     if (document.getElementById("verbose").checked) {
                         SpellList = SpellList + Mastery[y].Skills[x].desc + "<br>"
-                        SpellList = SpellList + Mastery[y].Skills[x].spells[spellrank].spellInfo + "<br>"
+                        SpellList = SpellList + Mastery[y].Skills[x].spells[spellRank].spellInfo + "<br>"
                     }
                 }
             }
@@ -470,8 +461,6 @@ function UpdateLinkBack() {
 }
 
 function SetFormFromReturn(string, masteryId) {
-
-
     // set the Skill Adjustment drop down
     if (_SA.length > 0) {
         SetDropDownByValue('skillAdjustment', _SA);

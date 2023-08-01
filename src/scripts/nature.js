@@ -1,14 +1,6 @@
-function SetMastery(Skills, Attributes) {
-    this.Skills = Skills
-    this.masteryId = 4
-    this.masteryName = "Nature"
-    this.Attributes = Attributes
-}
-
 window.loadNature = loadNature;
 
 function loadNature() {
-
     // set attributes
     if (!AttributesBase[0]) { // base att's are only set one time
         AttributesBase[0] = new Attribute(300, 300, 50, 50, 50) // base stats for characters
@@ -71,22 +63,22 @@ function loadNature() {
 
     // Call of the Wild
     Spells = [];
-    Spells[1] = new SpellInfo("120 Energy Cost, Feral Wolf Animal Companion Attributes: 165 Health, 45 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (15% Chance to Dodge Attacks, +15% Chance to Avoid Projectiles)")
-    Spells[2] = new SpellInfo("124 Energy Cost, Feral Wolf Animal Companion Attributes: 193 Health, 48 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (16% Chance to Dodge Attacks, +16% Chance to Avoid Projectiles)")
-    Spells[3] = new SpellInfo("128 Energy Cost, Feral Wolf Animal Companion Attributes: 222 Health, 51 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (17% Chance to Dodge Attacks, +17% Chance to Avoid Projectiles)")
-    Spells[4] = new SpellInfo("132 Energy Cost, Feral Wolf Animal Companion Attributes: 252 Health, 54 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (18% Chance to Dodge Attacks, +18% Chance to Avoid Projectiles)")
-    Spells[5] = new SpellInfo("136 Energy Cost, Feral Wolf Animal Companion Attributes: 280 Health, 57 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (19% Chance to Dodge Attacks, +19% Chance to Avoid Projectiles)")
-    Spells[6] = new SpellInfo("140 Energy Cost, Feral Wolf Animal Companion Attributes: 310 Health, 60 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (20% Chance to Dodge Attacks, +20% Chance to Avoid Projectiles)")
-    Spells[7] = new SpellInfo("144 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 338 Health, 63 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (21% Chance to Dodge Attacks, +21% Chance to Avoid Projectiles)")
-    Spells[8] = new SpellInfo("148 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 369 Health, 66 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (22% Chance to Dodge Attacks, +22% Chance to Avoid Projectiles)")
-    Spells[9] = new SpellInfo("152 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 397 Health, 69 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (23% Chance to Dodge Attacks, +23% Chance to Avoid Projectiles)")
-    Spells[10] = new SpellInfo("156 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 427 Health, 72 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (24% Chance to Dodge Attacks, +24% Chance to Avoid Projectiles)")
-    Spells[11] = new SpellInfo("160 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 457 Health, 75 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (25% Chance to Dodge Attacks, +25% Chance to Avoid Projectiles)")
-    Spells[12] = new SpellInfo("164 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 488 Health, 78 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (26% Chance to Dodge Attacks, +26% Chance to Avoid Projectiles)")
-    Spells[13] = new SpellInfo("168 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 518 Health, 81 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (27% Chance to Dodge Attacks, +27% Chance to Avoid Projectiles)")
-    Spells[14] = new SpellInfo("172 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 548 Health, 84 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (28% Chance to Dodge Attacks, +28% Chance to Avoid Projectiles)")
-    Spells[15] = new SpellInfo("176 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 581 Health, 87 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (29% Chance to Dodge Attacks, +29% Chance to Avoid Projectiles)")
-    Spells[16] = new SpellInfo("180 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 612 Health, 90 Energy, Feral Wolf Animal Companion Abilities: Dodge Atttack (30% Chance to Dodge Attacks, +30% Chance to Avoid Projectiles)")
+    Spells[1] = new SpellInfo("120 Energy Cost, Feral Wolf Animal Companion Attributes: 165 Health, 45 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (15% Chance to Dodge Attacks, +15% Chance to Avoid Projectiles)")
+    Spells[2] = new SpellInfo("124 Energy Cost, Feral Wolf Animal Companion Attributes: 193 Health, 48 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (16% Chance to Dodge Attacks, +16% Chance to Avoid Projectiles)")
+    Spells[3] = new SpellInfo("128 Energy Cost, Feral Wolf Animal Companion Attributes: 222 Health, 51 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (17% Chance to Dodge Attacks, +17% Chance to Avoid Projectiles)")
+    Spells[4] = new SpellInfo("132 Energy Cost, Feral Wolf Animal Companion Attributes: 252 Health, 54 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (18% Chance to Dodge Attacks, +18% Chance to Avoid Projectiles)")
+    Spells[5] = new SpellInfo("136 Energy Cost, Feral Wolf Animal Companion Attributes: 280 Health, 57 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (19% Chance to Dodge Attacks, +19% Chance to Avoid Projectiles)")
+    Spells[6] = new SpellInfo("140 Energy Cost, Feral Wolf Animal Companion Attributes: 310 Health, 60 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (20% Chance to Dodge Attacks, +20% Chance to Avoid Projectiles)")
+    Spells[7] = new SpellInfo("144 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 338 Health, 63 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (21% Chance to Dodge Attacks, +21% Chance to Avoid Projectiles)")
+    Spells[8] = new SpellInfo("148 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 369 Health, 66 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (22% Chance to Dodge Attacks, +22% Chance to Avoid Projectiles)")
+    Spells[9] = new SpellInfo("152 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 397 Health, 69 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (23% Chance to Dodge Attacks, +23% Chance to Avoid Projectiles)")
+    Spells[10] = new SpellInfo("156 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 427 Health, 72 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (24% Chance to Dodge Attacks, +24% Chance to Avoid Projectiles)")
+    Spells[11] = new SpellInfo("160 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 457 Health, 75 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (25% Chance to Dodge Attacks, +25% Chance to Avoid Projectiles)")
+    Spells[12] = new SpellInfo("164 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 488 Health, 78 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (26% Chance to Dodge Attacks, +26% Chance to Avoid Projectiles)")
+    Spells[13] = new SpellInfo("168 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 518 Health, 81 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (27% Chance to Dodge Attacks, +27% Chance to Avoid Projectiles)")
+    Spells[14] = new SpellInfo("172 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 548 Health, 84 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (28% Chance to Dodge Attacks, +28% Chance to Avoid Projectiles)")
+    Spells[15] = new SpellInfo("176 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 581 Health, 87 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (29% Chance to Dodge Attacks, +29% Chance to Avoid Projectiles)")
+    Spells[16] = new SpellInfo("180 Energy Cost, 2 Summon Limit, Feral Wolf Animal Companion Attributes: 612 Health, 90 Energy, Feral Wolf Animal Companion Abilities: Dodge Attack (30% Chance to Dodge Attacks, +30% Chance to Avoid Projectiles)")
     Skills[1] = new Skill("Call of the Wild", 1, Spells, -1, "Summons a wolf companion to fight with you in battle. At higher levels more wolves can be controlled at once.")
 
     // Heart of Oak
@@ -354,9 +346,10 @@ function loadNature() {
     Skills[19] = new Skill("Nature's Wrath", 32, Spells, 15, "Imbues the Nymph's attacks with the power of the elements.")
 
     // set the mastery array
-    Mastery[4] = new SetMastery(Skills, Attributes)
+    Mastery[4] = {
+        masteryName: "Nature",
+        Skills: Skills,
+        Attributes:Attributes
+    }
 
-    // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
-    //alert(Skills[1][0].desc)
 }

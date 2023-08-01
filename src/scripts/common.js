@@ -13,33 +13,48 @@ function loadHtml(id, file) {
 
     request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
-            const resp = request.responseText;
-            document.getElementById(id).innerHTML = resp;
-
+            document.getElementById(id).innerHTML = request.responseText;
         }
     };
     request.send();
 }
 
+function buildListeners(){
+    const hover = document.getElementsByClassName("draw-spell");
+    Array.from(hover).forEach(function(element) {
+        element.addEventListener('mouseenter', DrawTip);
+        element.addEventListener('mouseleave', KillTip);
+    });
+
+    const pointAdder = document.getElementsByClassName("add-point");
+    Array.from(pointAdder).forEach(function(element) {
+        element.addEventListener('mousedown', AddPointNew);
+    });
+}
+
 function Skill(name, min_points, spells, preReq, desc) {
-    this.name = name
-    this.min_points = min_points
-    this.desc = desc
-    this.spells = spells
-    this.preReq = preReq
+    return {
+        name: name,
+        min_points:min_points,
+        desc:desc,
+        spells:spells,
+        preReq:preReq
+    }
 }
 
 function Attribute(Hth, Egy, Str, Dex, Int) {
-    this.str = Str
-    this.dex = Dex
-    this.health = Hth
-    this.inte = Int
-    this.energy = Egy
+    return {
+        str:Str,
+        dex:Dex,
+        health:Hth,
+        inte:Int,
+        energy:Egy
+    }
 }
 
 
 function SpellInfo(spellInfo) {
-    this.spellInfo = spellInfo
+    return {spellInfo:spellInfo}
 }
 
 window.loadHtml = loadHtml;

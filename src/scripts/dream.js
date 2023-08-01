@@ -1,15 +1,6 @@
-function SetMastery(Skills, Attributes) {
-    this.Skills = Skills
-    this.masteryId = 9
-    this.masteryName = "Dream"
-    this.Attributes = Attributes
-}
-
-
 window.loadDream = loadDream;
 
 function loadDream() {
-
     // set attributes
     if (!AttributesBase[0]) { // base att's are only set one time
         AttributesBase[0] = new Attribute(300, 300, 50, 50, 50) // base stats for characters
@@ -79,7 +70,7 @@ function loadDream() {
     Spells[12] = new SpellInfo("3 Charge Levels, +96% Total Damage, 87 Vitality Damage")
     Skills[1] = new Skill("Psionic Touch", 1, Spells, -1, "Psionic energies focused within your weapons will create a bone shattering resonance when they contact your enemies.")
 
-    // Distoration Wave
+    // Distortion Wave
     Spells = [];
     Spells[1] = new SpellInfo("36 Energy Cost, 12 Damage, 50% Slowed for 4.0 Seconds")
     Spells[2] = new SpellInfo("40 Energy Cost, 18 Damage, 50% Slowed for 4.0 Seconds")
@@ -93,7 +84,7 @@ function loadDream() {
     Spells[10] = new SpellInfo("72 Energy Cost, 125 Damage, 50% Slowed for 4.0 Seconds")
     Spells[11] = new SpellInfo("76 Energy Cost, 143 Damage, 50% Slowed for 4.0 Seconds")
     Spells[12] = new SpellInfo("80 Energy Cost, 165 Damage, 50% Slowed for 4.0 Seconds")
-    Skills[2] = new Skill("Distoration Wave", 1, Spells, -1, "A wave of force is projected outward that forms chaotic ripples in the fabric of reality and delivers devastating damage to the body and mind of enemies.")
+    Skills[2] = new Skill("Distortion Wave", 1, Spells, -1, "A wave of force is projected outward that forms chaotic ripples in the fabric of reality and delivers devastating damage to the body and mind of enemies.")
 
     // Trance of Empathy
     Spells = [];
@@ -113,14 +104,14 @@ function loadDream() {
 
     // Lucid Dream
     Spells = [];
-    Spells[1] = new SpellInfo("+10% Damage, +15% Electical Burn Damage, +15% Vitality Damage")
-    Spells[2] = new SpellInfo("+12% Damage, +19% Electical Burn Damage, +19% Vitality Damage")
-    Spells[3] = new SpellInfo("+15% Damage, +23% Electical Burn Damage, +23% Vitality Damage")
-    Spells[4] = new SpellInfo("+18% Damage, +27% Electical Burn Damage, +27% Vitality Damage")
-    Spells[5] = new SpellInfo("+21% Damage, +31% Electical Burn Damage, +31% Vitality Damage")
-    Spells[6] = new SpellInfo("+23% Damage, +35% Electical Burn Damage, +35% Vitality Damage")
-    Spells[7] = new SpellInfo("+25% Damage, +39% Electical Burn Damage, +39% Vitality Damage")
-    Spells[8] = new SpellInfo("+28% Damage, +45% Electical Burn Damage, +45% Vitality Damage")
+    Spells[1] = new SpellInfo("+10% Damage, +15% Electrical Burn Damage, +15% Vitality Damage")
+    Spells[2] = new SpellInfo("+12% Damage, +19% Electrical Burn Damage, +19% Vitality Damage")
+    Spells[3] = new SpellInfo("+15% Damage, +23% Electrical Burn Damage, +23% Vitality Damage")
+    Spells[4] = new SpellInfo("+18% Damage, +27% Electrical Burn Damage, +27% Vitality Damage")
+    Spells[5] = new SpellInfo("+21% Damage, +31% Electrical Burn Damage, +31% Vitality Damage")
+    Spells[6] = new SpellInfo("+23% Damage, +35% Electrical Burn Damage, +35% Vitality Damage")
+    Spells[7] = new SpellInfo("+25% Damage, +39% Electrical Burn Damage, +39% Vitality Damage")
+    Spells[8] = new SpellInfo("+28% Damage, +45% Electrical Burn Damage, +45% Vitality Damage")
     Skills[4] = new Skill("Lucid Dream", 4, Spells, -1, "Increased conscious control over your dream state enhances abilities that derive power from the dream world.")
 
     // Phantom Strike
@@ -147,7 +138,7 @@ function loadDream() {
     Spells[4] = new SpellInfo("+12% Offensive Ability, +12% Defensive Ability")
     Spells[5] = new SpellInfo("+15% Offensive Ability, +15% Defensive Ability")
     Spells[6] = new SpellInfo("+18% Offensive Ability, +18% Defensive Ability")
-    Skills[6] = new Skill("Premonition", 10, Spells, 4, "A procognitive sense of the imminent future allows you to stay one step ahead of your enemies in combat.")
+    Skills[6] = new Skill("Premonition", 10, Spells, 4, "A precognitive sense of the imminent future allows you to stay one step ahead of your enemies in combat.")
 
     // Summon Nightmare
     Spells = [];
@@ -207,18 +198,18 @@ function loadDream() {
 
     // Trance of Convalescence
     Spells = [];
-    Spells[1] = new SpellInfo("12.0 Meter Radius, 3% Damage Absoption, +1.0 Health Regeneration per second,+1.0 Energy Regeneration per second,+100 Energy Reserved")
-    Spells[2] = new SpellInfo("12.0 Meter Radius, 4% Damage Absoption, +2.0 Health Regeneration per second,+1.2 Energy Regeneration per second,+100 Energy Reserved")
-    Spells[3] = new SpellInfo("12.0 Meter Radius, 5% Damage Absoption, +3.0 Health Regeneration per second,+1.4 Energy Regeneration per second,+100 Energy Reserved")
-    Spells[4] = new SpellInfo("12.0 Meter Radius, 6% Damage Absoption, +4.0 Health Regeneration per second,+1.6 Energy Regeneration per second,+100 Energy Reserved")
-    Spells[5] = new SpellInfo("12.0 Meter Radius, 7% Damage Absoption, +5.0 Health Regeneration per second,+1.8 Energy Regeneration per second,+100 Energy Reserved")
-    Spells[6] = new SpellInfo("12.0 Meter Radius, 8% Damage Absoption, +6.0 Health Regeneration per second,+2.0 Energy Regeneration per second,+100 Energy Reserved")
-    Spells[7] = new SpellInfo("12.0 Meter Radius, 9% Damage Absoption, +7.0 Health Regeneration per second,+2.2 Energy Regeneration per second,+100 Energy Reserved")
-    Spells[8] = new SpellInfo("12.0 Meter Radius, 10% Damage Absoption, +8.0 Health Regeneration per second,+2.4 Energy Regeneration per second,+100 Energy Reserved")
-    Spells[9] = new SpellInfo("12.0 Meter Radius, 11% Damage Absoption, +9.0 Health Regeneration per second,+2.6 Energy Regeneration per second,+100 Energy Reserved")
-    Spells[10] = new SpellInfo("12.0 Meter Radius, 12% Damage Absoption, +10.0 Health Regeneration per second,+2.8 Energy Regeneration per second,+100 Energy Reserved")
-    Spells[11] = new SpellInfo("12.0 Meter Radius, 13% Damage Absoption, +11.0 Health Regeneration per second,+3.0 Energy Regeneration per second,+100 Energy Reserved")
-    Spells[12] = new SpellInfo("12.0 Meter Radius, 15% Damage Absoption, +12.0 Health Regeneration per second,+3.2 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[1] = new SpellInfo("12.0 Meter Radius, 3% Damage Absorption, +1.0 Health Regeneration per second,+1.0 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[2] = new SpellInfo("12.0 Meter Radius, 4% Damage Absorption, +2.0 Health Regeneration per second,+1.2 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[3] = new SpellInfo("12.0 Meter Radius, 5% Damage Absorption, +3.0 Health Regeneration per second,+1.4 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[4] = new SpellInfo("12.0 Meter Radius, 6% Damage Absorption, +4.0 Health Regeneration per second,+1.6 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[5] = new SpellInfo("12.0 Meter Radius, 7% Damage Absorption, +5.0 Health Regeneration per second,+1.8 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[6] = new SpellInfo("12.0 Meter Radius, 8% Damage Absorption, +6.0 Health Regeneration per second,+2.0 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[7] = new SpellInfo("12.0 Meter Radius, 9% Damage Absorption, +7.0 Health Regeneration per second,+2.2 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[8] = new SpellInfo("12.0 Meter Radius, 10% Damage Absorption, +8.0 Health Regeneration per second,+2.4 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[9] = new SpellInfo("12.0 Meter Radius, 11% Damage Absorption, +9.0 Health Regeneration per second,+2.6 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[10] = new SpellInfo("12.0 Meter Radius, 12% Damage Absorption, +10.0 Health Regeneration per second,+2.8 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[11] = new SpellInfo("12.0 Meter Radius, 13% Damage Absorption, +11.0 Health Regeneration per second,+3.0 Energy Regeneration per second,+100 Energy Reserved")
+    Spells[12] = new SpellInfo("12.0 Meter Radius, 15% Damage Absorption, +12.0 Health Regeneration per second,+3.2 Energy Regeneration per second,+100 Energy Reserved")
     Skills[11] = new Skill("Trance of Convalescence", 16, Spells, -1, "A restful state of mind causes increased life recovery and damage absorption for the player and allies<br><B>Trance Skill - Only one trance can be active at a time</b>.")
 
     // Hypnotic Gaze
@@ -231,7 +222,7 @@ function loadDream() {
     Spells[6] = new SpellInfo("80 Energy Cost, 5.5 seconds of Confusion")
     Spells[7] = new SpellInfo("82 Energy Cost, 6.0 seconds of Confusion")
     Spells[8] = new SpellInfo("83 Energy Cost, 6.5 seconds of Confusion")
-    Skills[12] = new Skill("Hypnotic Gaze", 16, Spells, 7, "The mesmerizing stare of the Nightmare is able to dominate lesser inds and throw them into a state of confusion, causing them to wander aimlessly and attack phantom images.")
+    Skills[12] = new Skill("Hypnotic Gaze", 16, Spells, 7, "The mesmerizing stare of the Nightmare is able to dominate lesser minds and throw them into a state of confusion, causing them to wander aimlessly and attack phantom images.")
 
     // Distortion Field
     Spells = [];
@@ -269,9 +260,9 @@ function loadDream() {
     Spells[4] = new SpellInfo("+8% Total Speed, +10% Chance to Avoid Projectiles, 20% Slow Resistance")
     Spells[5] = new SpellInfo("+10% Total Speed, +12% Chance to Avoid Projectiles, 24% Slow Resistance")
     Spells[6] = new SpellInfo("+12% Total Speed, +15% Chance to Avoid Projectiles, 28% Slow Resistance")
-    Skills[15] = new Skill("Temporal Flux", 24, Spells, 4, "A subtle acceleration of time around the player allows them to move more quickly, anticipate attacks, and negate the dlowing effects of enemy skills.")
+    Skills[15] = new Skill("Temporal Flux", 24, Spells, 4, "A subtle acceleration of time around the player allows them to move more quickly, anticipate attacks, and negate the slowing effects of enemy skills.")
 
-    // Psionic Immonlation
+    // Psionic Immolation
     Spells = [];
     Spells[1] = new SpellInfo("+18 Energy Cost, 96 Electrical Burn Damage over 4.0 Seconds,+50% Damage to Demons")
     Spells[2] = new SpellInfo("+26 Energy Cost, 129 Electrical Burn Damage over 4.0 Seconds,+50% Damage to Demons")
@@ -285,7 +276,7 @@ function loadDream() {
     Spells[10] = new SpellInfo("+90 Energy Cost, 447 Electrical Burn Damage over 4.0 Seconds,+50% Damage to Demons")
     Spells[11] = new SpellInfo("+95 Energy Cost, 494 Electrical Burn Damage over 4.0 Seconds,+50% Damage to Demons")
     Spells[12] = new SpellInfo("+99 Energy Cost, 544 Electrical Burn Damage over 4.0 Seconds,+50% Damage to Demons")
-    Skills[16] = new Skill("Psionic Immonlation", 24, Spells, 2, "Psionic energies ignite into a surge of electrical power that causes horrific burning over a short duration.")
+    Skills[16] = new Skill("Psionic Immolation", 24, Spells, 2, "Psionic energies ignite into a surge of electrical power that causes horrific burning over a short duration.")
 
     // Trance of Wrath
     Spells = [];
@@ -317,25 +308,25 @@ function loadDream() {
 
     // Temporal Rift
     Spells = [];
-    Spells[1] = new SpellInfo("3 Energy Cost, 216 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (45% Energy drained causes Damage), 1.5 seconds of Petrify, +27 Damage to Demons")
-    Spells[2] = new SpellInfo("4 Energy Cost, 256 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (60% Energy drained causes Damage), 2.0 seconds of Petrify, +38 Damage to Demons")
-    Spells[3] = new SpellInfo("5 Energy Cost, 300 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (75% Energy drained causes Damage), 2.5 seconds of Petrify, +49 Damage to Demons")
-    Spells[4] = new SpellInfo("6 Energy Cost, 344 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (90% Energy drained causes Damage), 3.0 seconds of Petrify, +60 Damage to Demons")
-    Spells[5] = new SpellInfo("7 Energy Cost, 392 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (105% Energy drained causes Damage), 3.5 seconds of Petrify, +72 Damage to Demons")
-    Spells[6] = new SpellInfo("8 Energy Cost, 444 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (120% Energy drained causes Damage), 4.0 seconds of Petrify, +85 Damage to Demons")
-    Spells[7] = new SpellInfo("9 Energy Cost, 492 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (135% Energy drained causes Damage), 4.5 seconds of Petrify, +97 Damage to Demons")
-    Spells[8] = new SpellInfo("10 Energy Cost, 552 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (150% Energy drained causes Damage), 5.0 seconds of Petrify, +112 Damage to Demons")
-    Spells[9] = new SpellInfo("11 Energy Cost, 608 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (165% Energy drained causes Damage), 5.5 seconds of Petrify, +126 Damage to Demons")
-    Spells[10] = new SpellInfo("12 Energy Cost, 668 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (180% Energy drained causes Damage), 6.0 seconds of Petrify, +141 Damage to Demons")
-    Spells[11] = new SpellInfo("12 Energy Cost, 732 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (195% Energy drained causes Damage), 6.5 seconds of Petrify, +157 Damage to Demons")
-    Spells[12] = new SpellInfo("12 Energy Cost, 796 Electical Burn Damage over 4.0 Seconds, 15% Energy Drained (210% Energy drained causes Damage), 7.0 seconds of Petrify, +173 Damage to Demons")
+    Spells[1] = new SpellInfo("3 Energy Cost, 216 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (45% Energy drained causes Damage), 1.5 seconds of Petrify, +27 Damage to Demons")
+    Spells[2] = new SpellInfo("4 Energy Cost, 256 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (60% Energy drained causes Damage), 2.0 seconds of Petrify, +38 Damage to Demons")
+    Spells[3] = new SpellInfo("5 Energy Cost, 300 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (75% Energy drained causes Damage), 2.5 seconds of Petrify, +49 Damage to Demons")
+    Spells[4] = new SpellInfo("6 Energy Cost, 344 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (90% Energy drained causes Damage), 3.0 seconds of Petrify, +60 Damage to Demons")
+    Spells[5] = new SpellInfo("7 Energy Cost, 392 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (105% Energy drained causes Damage), 3.5 seconds of Petrify, +72 Damage to Demons")
+    Spells[6] = new SpellInfo("8 Energy Cost, 444 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (120% Energy drained causes Damage), 4.0 seconds of Petrify, +85 Damage to Demons")
+    Spells[7] = new SpellInfo("9 Energy Cost, 492 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (135% Energy drained causes Damage), 4.5 seconds of Petrify, +97 Damage to Demons")
+    Spells[8] = new SpellInfo("10 Energy Cost, 552 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (150% Energy drained causes Damage), 5.0 seconds of Petrify, +112 Damage to Demons")
+    Spells[9] = new SpellInfo("11 Energy Cost, 608 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (165% Energy drained causes Damage), 5.5 seconds of Petrify, +126 Damage to Demons")
+    Spells[10] = new SpellInfo("12 Energy Cost, 668 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (180% Energy drained causes Damage), 6.0 seconds of Petrify, +141 Damage to Demons")
+    Spells[11] = new SpellInfo("12 Energy Cost, 732 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (195% Energy drained causes Damage), 6.5 seconds of Petrify, +157 Damage to Demons")
+    Spells[12] = new SpellInfo("12 Energy Cost, 796 Electrical Burn Damage over 4.0 Seconds, 15% Energy Drained (210% Energy drained causes Damage), 7.0 seconds of Petrify, +173 Damage to Demons")
     Skills[19] = new Skill("Temporal Rift", 32, Spells, 14, "Enhances the power of the distortion ripple, unleashing a surge of psionic energy that causes massive damage to enemies and temporarily freezes them in time.")
 
 
     // set the mastery array
-    Mastery[9] = new SetMastery(Skills, Attributes)
-
-    // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
-    //alert(Skills[1][0].desc)
+    Mastery[9] = {
+        masteryName: "Dream",
+        Skills: Skills,
+        Attributes:Attributes
+    }
 }

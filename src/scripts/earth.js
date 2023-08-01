@@ -1,10 +1,3 @@
-function SetMastery(Skills, Attributes) {
-    this.Skills = Skills
-    this.masteryId = 1
-    this.masteryName = "Earth"
-    this.Attributes = Attributes
-}
-
 window.loadEarth = loadEarth;
 
 function loadEarth() {
@@ -232,7 +225,7 @@ function loadEarth() {
     Spells[6] = new SpellInfo("1 Active Energy Cost/Second, 16 Damage, 11 Reduced Physical Damage For 3 Seconds, 50 Reduced Armor For 3 Seconds")
     Spells[7] = new SpellInfo("1 Active Energy Cost/Second, 19 Damage, 12 Reduced Physical Damage For 3 Seconds, 58 Reduced Armor For 3 Seconds")
     Spells[8] = new SpellInfo("1 Active Energy Cost/Second, 23 Damage, 15 Reduced Physical Damage For 3 Seconds, 65 Reduced Armor For 3 Seconds")
-    Skills[11] = new Skill("Soften Metal", 16, Spells, 4, "Intense heat from the Ring of Flame softens the metal of enemy armor and weapons decreaing their effectiveness.")
+    Skills[11] = new Skill("Soften Metal", 16, Spells, 4, "Intense heat from the Ring of Flame softens the metal of enemy armor and weapons decreasing their effectiveness.")
 
     // Conflagration
     Spells = [];
@@ -306,7 +299,7 @@ function loadEarth() {
     Spells[12] = new SpellInfo("26 Energy Cost, 3.0 Meter Radius, 7-13 Fragments, 126 Damage, 59 Fire Damage, 1.5 Seconds of Stun")
     Skills[16] = new Skill("Fragmentation", 24, Spells, 5, "Causes the Volcanic Orb to violently explode on impact sending out fragments of rock that inflict physical damage to enemies in their path.")
 
-    // Volativity
+    // Volatility
     Spells = [];
     Spells[1] = new SpellInfo("33% Chance of +75% Fire Damage")
     Spells[2] = new SpellInfo("33% Chance of +83% Fire Damage")
@@ -320,7 +313,7 @@ function loadEarth() {
     Spells[10] = new SpellInfo("33% Chance of +157% Fire Damage")
     Spells[11] = new SpellInfo("33% Chance of +166% Fire Damage")
     Spells[12] = new SpellInfo("33% Chance of +178% Fire Damage")
-    Skills[17] = new Skill("Volativity", 32, Spells, -1, "Enhanced by the volatile energy of the Earth, your fire attacks have a chance of inflicting greatly increased damage.")
+    Skills[17] = new Skill("Volatility", 32, Spells, -1, "Enhanced by the volatile energy of the Earth, your fire attacks have a chance of inflicting greatly increased damage.")
 
     // Metamorphosis
     Spells = [];
@@ -351,9 +344,9 @@ function loadEarth() {
     Skills[19] = new Skill("Eruption", 32, Spells, -1, "Volcanic fissures form in the ground, emitting deadly geysers of molten flame and fiery chunks of brimstone")
 
     // set the mastery array
-    Mastery[1] = new SetMastery(Skills, Attributes)
-
-    // testing
-    //alert(Mastery[0].Skills[19].spells[10].spellInfo)
-    //alert(Skills[1][0].desc)
+    Mastery[1] = {
+        masteryName: "Earth",
+        Skills: Skills,
+        Attributes:Attributes
+    }
 }

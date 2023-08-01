@@ -1,11 +1,3 @@
-function SetMastery(Skills, Attributes) {
-    this.Skills = Skills
-    this.masteryId = 3
-    this.masteryName = "Warfare"
-    this.Attributes = Attributes
-}
-
-
 window.loadWarfare = loadWarfare;
 
 function loadWarfare() {
@@ -172,7 +164,7 @@ function loadWarfare() {
     Spells[8] = new SpellInfo("50 Energy Cost, Battle Standard Attributes: Life Time 32 Seconds, 390 Health, Battle Standard Abilities: Battle Standard (30% Damage Absorption, +1 to All Skills, 66 Second Duration, 12.0 Meter Radius, +72 Offensive Ability)")
     Spells[9] = new SpellInfo("50 Energy Cost, Battle Standard Attributes: Life Time 34 Seconds, 420 Health, Battle Standard Abilities: Battle Standard (33% Damage Absorption, +1 to All Skills, 72 Second Duration, 12.0 Meter Radius, +80 Offensive Ability)")
     Spells[10] = new SpellInfo("50 Energy Cost, Battle Standard Attributes: Life Time 36 Seconds, 450 Health, Battle Standard Abilities: Battle Standard (36% Damage Absorption, +1 to All Skills, 78 Second Duration, 12.0 Meter Radius, +88 Offensive Ability)")
-    Skills[9] = new Skill("Battle Standard", 10, Spells, -1, "Throw down a mighty standard to emoblden the hearts of nearby allies.")
+    Skills[9] = new Skill("Battle Standard", 10, Spells, -1, "Throw down a mighty standard to embolden the hearts of nearby allies.")
 
     // War Wind
     Spells = [];
@@ -296,9 +288,9 @@ function loadWarfare() {
 
 
     // set the mastery array
-    Mastery[3] = new SetMastery(Skills, Attributes)
-
-    // testing
-    //alert(Mastery[3].Skills[19].spells[4].spellInfo)
-    //alert(Skills[1][0].desc)
+    Mastery[3] = {
+        masteryName: "Warfare",
+        Skills: Skills,
+        Attributes:Attributes
+    }
 }

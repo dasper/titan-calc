@@ -1,10 +1,3 @@
-function SetMastery(Skills, Attributes) {
-    this.Skills = Skills
-    this.masteryId = 8
-    this.masteryName = "Storm"
-    this.Attributes = Attributes
-}
-
 window.loadStorm = loadStorm;
 
 function loadStorm() {
@@ -314,7 +307,7 @@ function loadStorm() {
     Spells[6] = new SpellInfo("42 Energy Cost, 30 Second Duration, 14.0 Meter Radius, +80% Elemental Damage, 27% Cold Resistance, 27% Lightning Resistance, Protects Against: Lightning, Cold")
     Spells[7] = new SpellInfo("44 Energy Cost, 30 Second Duration, 14.0 Meter Radius, +90% Elemental Damage, 33% Cold Resistance, 33% Lightning Resistance, Protects Against: Lightning, Cold")
     Spells[8] = new SpellInfo("46 Energy Cost, 30 Second Duration, 14.0 Meter Radius, +100% Elemental Damage, 33% Cold Resistance, 33% Lightning Resistance, Protects Against: Lightning, Cold")
-    Skills[18] = new Skill("Eye of the Storm", 32, Spells, 15, "A wisp ability that increases the lightning and cold damage of all neargy allies for a duration and provides protection from lightning and cold damage.")
+    Skills[18] = new Skill("Eye of the Storm", 32, Spells, 15, "A wisp ability that increases the lightning and cold damage of all nearby allies for a duration and provides protection from lightning and cold damage.")
 
     // Reflection
     Spells = [];
@@ -329,9 +322,9 @@ function loadStorm() {
     Skills[19] = new Skill("Reflection", 32, Spells, 13, "Gives Energy Shield the ability to reflect a portion of enemy attack damage back at enemies who hit it.")
 
     // set the mastery array
-    Mastery[8] = new SetMastery(Skills, Attributes)
-
-    // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
-    //alert(Skills[1][0].desc)
+    Mastery[8] = {
+        masteryName: "Storm",
+        Skills: Skills,
+        Attributes:Attributes
+    }
 }

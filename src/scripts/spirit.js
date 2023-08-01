@@ -1,10 +1,3 @@
-function SetMastery(Skills, Attributes) {
-    this.Skills = Skills
-    this.masteryId = 2
-    this.masteryName = "Spirit"
-    this.Attributes = Attributes
-}
-
 window.loadSpirit = loadSpirit;
 
 function loadSpirit() {
@@ -331,9 +324,9 @@ function loadSpirit() {
     Skills[19] = new Skill("Arcane Blast", 32, Spells, 15, "Drawing upon ancient arcane craft the Liche King forms deadly bolts of elemental energy and launches them at enemies.")
 
     // set the mastery array
-    Mastery[2] = new SetMastery(Skills, Attributes)
-
-    // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
-    //alert(Skills[1][0].desc)
+    Mastery[2] = {
+        masteryName: "Spirit",
+        Skills: Skills,
+        Attributes:Attributes
+    }
 }

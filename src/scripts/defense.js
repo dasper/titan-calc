@@ -1,10 +1,3 @@
-function SetMastery(Skills, Attributes) {
-    this.Skills = Skills
-    this.masteryId = 5
-    this.masteryName = "Defense"
-    this.Attributes = Attributes
-}
-
 window.loadDefense = loadDefense;
 
 function loadDefense() {
@@ -303,9 +296,9 @@ function loadDefense() {
 
 
     // set the mastery array
-    Mastery[5] = new SetMastery(Skills, Attributes)
-
-    // testing
-    //alert(Mastery[2].Skills[19].spells[4].spellInfo)
-    //alert(Skills[1][0].desc)
+    Mastery[5] = {
+        masteryName: "Defense",
+        Skills: Skills,
+        Attributes:Attributes
+    }
 }
